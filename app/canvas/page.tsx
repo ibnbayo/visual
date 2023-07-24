@@ -25,7 +25,7 @@ const CanvasPage: React.FC<CanvasPageProps> = (
         {data.map((item) => {
           return (
             <Col xs={24} lg={12} key={item.year}>
-              <Card title={item.year}>
+              <Card title={`Academic Papers - ${item.year}`}>
                 <ChartLoader
                   data={item.data}
                   chartId={`chart-${item.year}`}
