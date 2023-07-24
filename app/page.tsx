@@ -1,40 +1,65 @@
-'use client'
-import { useState, useEffect } from 'react'
-import institutionsData from '../example-data/institutions.json'
-import submissionsData from '../example-data/submissions.json'
+
 import CanvasPage from './canvas/page'
 
-export default function Home() {
+export default async function Home() {
 
+  interface Institution{
+  name: string;
+  address: string;
+  country: string;
+  region: string;
+  id: string;
+}
 
-  
-  const submissions = submissionsData
-  const institutions = institutionsData
+  interface Submission{
+   id: string;
+    institution_id: string;
+    year: number;
+    students_total: number;
+    undergraduates_total: number;
+    postgraduates_total: number;
+    staff_total: number;
+    academic_papers: number;
+    institution_income: number;
+    subjects: any[]
+}
+
+  let institutions: Institution[]
+  let submissions: Submission[]
+
+  const instUrl = 'http://localhost:3001/institutions';
+  const response = await fetch(instUrl);
+  institutions =  await response.json();
+
+  const subUrl = 'http://localhost:3001/submissions';
+  const res = await fetch(subUrl);
+  submissions =  await res.json();
+
 
   const yearsArray = Array.from(
-    new Set(submissions.map((sub) => sub.year)),
+    new Set(submissions.map((sub: Submission) => sub.year)),
   )
 
   // Array for joined data
   const yearlyData: any[] = []
 
-  // Loop through each year
+
   yearsArray.forEach((year) => {
-    // Filter submissions by year
+
     const yearSubmissions = submissions.filter(
-      (sub) => sub.year === year,
+      (sub: Submission) => sub.year === year,
     )
 
-    // Loop through institutions
-    institutions.forEach((institution) => {
+
+    institutions.forEach((institution: Institution) => {
       // Filter submissions for this institution
       const institutionSubmissions = yearSubmissions.filter(
-        (sub) => sub.institution_id === institution.id,
+        (sub: Submission) => sub.institution_id === institution.id,
       )
 
       // Sum paper count
       const paperCount = institutionSubmissions.reduce(
-        (total, curr) => {
+        (total: number, curr: Submission) => {
           return total + curr.academic_papers
         },
         0,
@@ -56,28 +81,18 @@ export default function Home() {
   ]
 
   const groupedData: any[] = []
-
-  // Map years to grouped data
+  
   uniqueYears.map((year) => {
-    // Filter data by year
     const yearData = yearlyData.filter((d) => d.year === year)
-
-    // Create object with year and data
     const groupedYear = {
       year,
       data: yearData,
     }
-
-    // Add to array
     groupedData.push(groupedYear)
   })
 
-  console.log(groupedData)
-  const passedData = groupedData
-
   return (
     <main data-testid="main">
-      
       <CanvasPage data={groupedData} />
     </main>
   )
