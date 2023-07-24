@@ -26,6 +26,8 @@ const Card: React.FC<CardProps> = (props: CardProps) => {
         </Row>,
       ]}
     >
+      <div >{children}</div>
+
      
     </AntdCard>
   );
