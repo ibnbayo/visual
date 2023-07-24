@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 
 interface ChartLoaderProps {
-  data: any[];
-  chartId: string;
-  columnXname: string;
-  columnYname: string;
-  chartCoordinate?: string;
-  year?: number; 
+  data: any[]
+  chartId: string
+  columnXname: string
+  columnYname: string
+  chartCoordinate?: string
+  year?: number
 }
 
 const ChartLoader: React.FC<ChartLoaderProps> = ({
@@ -22,30 +22,30 @@ const ChartLoader: React.FC<ChartLoaderProps> = ({
         container: chartId,
         autoFit: true,
         height: 500,
-      });
+      })
 
-      chart.data(data);
+      chart.data(data)
 
       chart.scale(columnYname, {
         nice: true,
-      });
+      })
 
       if (chartCoordinate === 'theta') {
         chart.coordinate('theta', {
           radius: 0.75,
-        });
+        })
       }
 
       chart
         .interval()
         .position(`${columnXname}*${columnYname}`)
-        .color(columnXname);
+        .color(columnXname)
 
-      chart.render();
-    });
-  }, [data, chartId, columnYname, chartCoordinate, columnXname]);
+      chart.render()
+    })
+  }, [data, chartId, columnYname, chartCoordinate, columnXname])
 
-  return <div id={chartId} />;
-};
+  return <div id={chartId} />
+}
 
-export default ChartLoader;
+export default ChartLoader
