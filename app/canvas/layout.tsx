@@ -16,7 +16,7 @@ export default function CanvasLayout({ children }: Props) {
   return (
     <Layout>
       <Header className={styles.header}>
-        <Title level={4}>THE Data Visualization</Title>
+        <Title level={5}>THE Data Visualization</Title>
       </Header>
 
       <Content className={styles.content}>{children}</Content>

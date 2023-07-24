@@ -1,6 +1,6 @@
 import React from 'react'
-
-import { Row, Card as AntdCard, Space } from 'antd'
+import styles from './card.module.css';
+import { Row, Card as AntdCard } from 'antd'
 
 export interface CardProps {
   children?: React.ReactNode
@@ -12,6 +12,7 @@ const Card: React.FC<CardProps> = (props: CardProps) => {
 
   return (
     <AntdCard
+    // className={styles.card}
       title={title}
       bordered={false}
       actions={[
@@ -22,7 +23,7 @@ const Card: React.FC<CardProps> = (props: CardProps) => {
         ></Row>,
       ]}
     >
-      <div>{children}</div>
+      <div className={styles.chart}>{children}</div>
     </AntdCard>
   )
 }

@@ -27,7 +27,6 @@ const CanvasPage: React.FC<CanvasPageProps> = (
             <Col xs={24} lg={12} key={item.year}>
               <Card title={item.year}>
                 <ChartLoader
-                  // data={datay && datay.length && datay[0]}
                   data={item.data}
                   chartId={`chart-${item.year}`}
                   columnXname="institutionName"
