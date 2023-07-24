@@ -1,9 +1,9 @@
 .card :global(.ant-card-head-title) {
-  font-weight: bold; 
+    font-weight: bold;
 }
 
 .chart {
-  width: 100%;
-  min-height: 200px;
-  margin-top: 50px;  
+    width: 100%;
+    min-height: 200px;
+    margin-top: 50px;
 }
