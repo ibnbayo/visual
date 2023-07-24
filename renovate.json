@@ -1,0 +1,21 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "depTypeList": ["devDependencies"],
+      "automerge": true
+    },
+    {
+      "depTypeList": ["dependencies"],
+      "automerge": false
+    }
+  ],
+
+  "semanticCommits": true,
+  "rangeStrategy": "pin",
+
+  "baseBranches": ["main"],
+
+  "platform": "github",
+  "repo": "username/repo"
+}
