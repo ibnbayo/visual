@@ -13,6 +13,7 @@ export interface CanvasPageProps {
 
 const CanvasPage: React.FC<CanvasPageProps>= (props: CanvasPageProps) => {
   const { data } = props;
+//   console.log(data[1]);
 
   return (
     <CanvasLayout>
@@ -28,8 +29,8 @@ const CanvasPage: React.FC<CanvasPageProps>= (props: CanvasPageProps) => {
               data={data}
 
               chartId='chart1'
-              columnXname='institution_id'
-              columnYname='staff_total'
+              columnXname='institutionName'
+              columnYname='papers'
             />
             
           </Card>
