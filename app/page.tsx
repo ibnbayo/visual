@@ -1,3 +1,6 @@
+import Card from './components/card/card';
+
+
 
 export default function Home() {
   return (
@@ -8,6 +11,7 @@ export default function Home() {
       >
         App
       </h1>
+      <Card title={`Chart`}/>
       
     </main>
   )
