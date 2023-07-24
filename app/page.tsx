@@ -1,8 +1,13 @@
+'use client'
+import { useState, useEffect } from 'react'
 import institutionsData from '../example-data/institutions.json'
 import submissionsData from '../example-data/submissions.json'
 import CanvasPage from './canvas/page'
 
 export default function Home() {
+
+
+  
   const submissions = submissionsData
   const institutions = institutionsData
 
