@@ -1,8 +1,13 @@
-// import Card from './components/card/card';
 
+import institutionsData from '../example-data/institutions.json'; 
+import submissionsData from '../example-data/submissions.json';
 import CanvasPage from './canvas/page'
 
 export default function Home() {
+
+  const submissions = submissionsData; 
+const institutions = institutionsData;
+
   return (
     <main data-testid="main" className="mx-auto max-w-2xl">
       <h1
@@ -11,8 +16,8 @@ export default function Home() {
       >
         App
       </h1>
-      <CanvasPage />
-      {/* <Card title={`Chart`}/> */}
+      <CanvasPage data={submissions}/>
+      
       
     </main>
   )

@@ -7,10 +7,12 @@ import Card from '../components/card/card';
 import CanvasLayout from './layout';
 import ChartLoader from '../components/chartLoader/chartLoader';
 
+export interface CanvasPageProps {
+  data: any[];
+}
 
-
-const CanvasPage: React.FC= () => {
-  
+const CanvasPage: React.FC<CanvasPageProps>= (props: CanvasPageProps) => {
+  const { data } = props;
 
   return (
     <CanvasLayout>
@@ -23,16 +25,11 @@ const CanvasPage: React.FC= () => {
 
           <Card title={'life'} >
             <ChartLoader
-              // data={datay && datay.length && datay[0]}
-              data={[{ "uni": "MIT", "students": 73992 },
-  { "uni": "Brown", "students": 61603 },
-  { "uni": "INSEAD", "students": 18455 },
-  { "uni": "Oxford", "students": 32891 },
-  { "uni": "LSE", "students": 11273 }]}
+              data={data}
 
               chartId='chart1'
-              columnXname='uni'
-              columnYname='students'
+              columnXname='institution_id'
+              columnYname='staff_total'
             />
             
           </Card>
