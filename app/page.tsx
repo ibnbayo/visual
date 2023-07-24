@@ -1,6 +1,6 @@
-import Card from './components/card/card';
+// import Card from './components/card/card';
 
-
+import CanvasPage from './canvas/page'
 
 export default function Home() {
   return (
@@ -11,7 +11,8 @@ export default function Home() {
       >
         App
       </h1>
-      <Card title={`Chart`}/>
+      <CanvasPage />
+      {/* <Card title={`Chart`}/> */}
       
     </main>
   )
