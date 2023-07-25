@@ -5,27 +5,6 @@ import { Institution, Submission } from '../types'
 
 export default async function Home() {
 
-//   interface Institution{
-//   name: string;
-//   address: string;
-//   country: string;
-//   region: string;
-//   id: string;
-// }
-
-//   interface Submission{
-//    id: string;
-//     institution_id: string;
-//     year: number;
-//     students_total: number;
-//     undergraduates_total: number;
-//     postgraduates_total: number;
-//     staff_total: number;
-//     academic_papers: number;
-//     institution_income: number;
-//     subjects: any[]
-// }
-
 
   const instUrl = 'http://localhost:3001/institutions';  
 const subUrl = 'http://localhost:3001/submissions';
