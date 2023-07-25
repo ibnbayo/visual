@@ -11,7 +11,7 @@ export interface CanvasPageProps {
   data: any[]
 }
 
-const CanvasPage: React.FC<CanvasPageProps> = (
+const CanvasPage : React.FC<CanvasPageProps>  = (
   props: CanvasPageProps,
 ) => {
   const { data } = props
@@ -24,8 +24,8 @@ const CanvasPage: React.FC<CanvasPageProps> = (
       >
         {data.map((item) => {
           return (
-            <Col xs={24} lg={12} key={item.year}>
-              <Card title={item.year}>
+            <Col xs={24} lg={12} key={item.year} data-testid='col'>
+              <Card title={`Academic Papers - ${item.year}`}>
                 <ChartLoader
                   data={item.data}
                   chartId={`chart-${item.year}`}

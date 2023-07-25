@@ -1,39 +1,37 @@
-
+import axios from 'axios';
 import CanvasPage from './canvas/page'
+import SubjectsPage from './subjects/page';
+import { Institution, Submission } from '../types'
 
 export default async function Home() {
 
-  interface Institution{
-  name: string;
-  address: string;
-  country: string;
-  region: string;
-  id: string;
+
+  const instUrl = 'http://localhost:3001/institutions';  
+const subUrl = 'http://localhost:3001/submissions';
+
+
+const getInstitutions = async() => {
+  try {
+    const response = await axios.get(instUrl);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 }
 
-  interface Submission{
-   id: string;
-    institution_id: string;
-    year: number;
-    students_total: number;
-    undergraduates_total: number;
-    postgraduates_total: number;
-    staff_total: number;
-    academic_papers: number;
-    institution_income: number;
-    subjects: any[]
+const getSubmissions = async() => {
+  try {
+    const response = await axios.get(subUrl);
+    return response.data; 
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 }
 
-  let institutions: Institution[]
-  let submissions: Submission[]
-
-  const instUrl = 'http://localhost:3001/institutions';
-  const response = await fetch(instUrl);
-  institutions =  await response.json();
-
-  const subUrl = 'http://localhost:3001/submissions';
-  const res = await fetch(subUrl);
-  submissions =  await res.json();
+const institutions = await getInstitutions(); 
+const submissions = await getSubmissions();
 
 
   const yearsArray = Array.from(
@@ -93,7 +91,11 @@ export default async function Home() {
 
   return (
     <main data-testid="main">
-      <CanvasPage data={groupedData} />
+      <CanvasPage data-testid="canvas" data={groupedData} />
+      <SubjectsPage 
+    institutions={institutions}
+    submissions={submissions} 
+  />
     </main>
   )
 }

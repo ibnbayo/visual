@@ -173,5 +173,67 @@
         "student_rating": 4.4
       }
     ]
+  },
+  {
+    "id": "FBE010A3-84AE-911C-D6E1-BBC360908E26",
+    "institution_id": "8C8A804F-7A43-5840-4296-8A0117325922",
+    "year": 2020,
+    "students_total": 8994,
+    "undergraduates_total": 8232,
+    "postgraduates_total": 777,
+    "staff_total": 111,
+    "academic_papers": 6778,
+    "institution_income": 91534309,
+    "subjects": [
+      {
+        "name": "Maths",
+        "academic_papers": 5242,
+        "students_total": 5122,
+        "student_rating": 4.2
+      },
+      {
+        "name": "Chemistry",
+        "academic_papers": 1191,
+        "students_total": 1320,
+        "student_rating": 4.1
+      },
+      {
+        "name": "Physics",
+        "academic_papers": 1929,
+        "students_total": 2221,
+        "student_rating": 4.4
+      }
+    ]
+  },
+  {
+    "id": "FBE010A3-84AE-911C-D6E1-BBC360908E25",
+    "institution_id": "8C8A804F-7A43-5840-4296-8A0117325921",
+    "year": 2020,
+    "students_total": 8994,
+    "undergraduates_total": 8232,
+    "postgraduates_total": 777,
+    "staff_total": 111,
+    "academic_papers": 6778,
+    "institution_income": 91534309,
+    "subjects": [
+      {
+        "name": "Maths",
+        "academic_papers": 5242,
+        "students_total": 5122,
+        "student_rating": 4.2
+      },
+      {
+        "name": "Chemistry",
+        "academic_papers": 1191,
+        "students_total": 1320,
+        "student_rating": 4.1
+      },
+      {
+        "name": "Biology",
+        "academic_papers": 1929,
+        "students_total": 2221,
+        "student_rating": 4.4
+      }
+    ]
   }
 ]
