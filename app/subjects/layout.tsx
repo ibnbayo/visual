@@ -1,15 +1,9 @@
-import './globals.css';
+// import './globals.css';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata = {
-  title: 'Data Visualization',
-  description:
-    'THE University Data Visualization',
-};
-
-export default function RootLayout({
+export default function SubjectsLayout({
   children,
 }: {
   children: React.ReactNode;

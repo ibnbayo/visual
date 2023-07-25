@@ -1,6 +1,6 @@
 'use client'
-
-import { Layout, Typography } from 'antd'
+import Link from 'next/link'
+import { Layout, Typography, Button } from 'antd'
 
 import styles from './styles.module.css'
 
@@ -17,6 +17,8 @@ export default function CanvasLayout({ children }: Props) {
     <Layout>
       <Header className={styles.header}>
         <Title level={5}>THE Data Visualization</Title>
+        {/* <Button><Link href="/subjects">Subjects</Link></Button> */}
+        
       </Header>
 
       <Content className={styles.content}>{children}</Content>
