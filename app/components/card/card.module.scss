@@ -1,0 +1,15 @@
+$font-weight-bold: bold;
+$chart-min-height: 200px;
+$chart-margin-top: 50px;
+
+.card {
+  & :global(.ant-card-head-title) {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.chart {
+  width: 100%;
+  min-height: $chart-min-height;
+  margin-top: $chart-margin-top;
+}
